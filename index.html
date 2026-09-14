@@ -36,13 +36,13 @@
     font-variant-numeric: tabular-nums;
   }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 72px; }
-
+ 
   /* ---- masthead ---- */
   .masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
   h1 { font-size: 25px; font-weight: 600; letter-spacing: -0.015em; margin: 0; }
   .sub { color: var(--ink-soft); font-size: 14px; margin: 0; }
   .masthead-right { margin-left: auto; display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--ink-soft); }
-
+ 
   button {
     font: inherit; font-size: 13.5px; font-weight: 500;
     color: var(--ink); background: var(--card);
@@ -51,7 +51,7 @@
   }
   button:hover { border-color: var(--teal-5); color: var(--teal-5); }
   button:focus-visible, select:focus-visible { outline: 2px solid var(--teal-4); outline-offset: 1px; }
-
+ 
   /* ---- filters ---- */
   .filters {
     display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: flex-end;
@@ -69,7 +69,7 @@
   .seg button:first-child { border-left: 0; }
   .seg button[aria-pressed="true"] { background: var(--teal-5); color: #fff; }
   .seg button[aria-pressed="true"]:hover { color: #fff; }
-
+ 
   /* ---- headline stats ---- */
   .stats { display: flex; flex-wrap: wrap; gap: 0; margin: 22px 0 30px; }
   .stat { flex: 1 1 128px; padding: 0 20px; border-left: 1px solid var(--rule); }
@@ -78,11 +78,11 @@
   .stat span { font-size: 13px; color: var(--ink-soft); }
   .stat em { display: block; font-style: normal; font-size: 12px; color: var(--teal-5); margin-top: 2px; }
   .stat.flagged b { color: var(--amber); }
-
+ 
   section { margin-bottom: 38px; }
   h2 { font-size: 16px; font-weight: 600; margin: 0 0 3px; }
   .note { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
-
+ 
   /* ---- muster grid ---- */
   .grid-scroll { overflow-x: auto; background: var(--card); border: 1px solid var(--rule); border-radius: 3px; }
   table.muster { border-collapse: separate; border-spacing: 0; }
@@ -113,7 +113,7 @@
   .legend { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-soft); margin-top: 10px; flex-wrap: wrap; }
   .legend .mark { width: 13px; height: 13px; margin: 0; }
   .legend .gap { width: 12px; }
-
+ 
   /* ---- day timeline ---- */
   .tl { background: var(--card); border: 1px solid var(--rule); border-radius: 3px; padding: 14px 18px 6px; }
   .tl-hours { position: relative; height: 16px; margin-left: 152px; }
@@ -140,14 +140,14 @@
     box-shadow: inset 0 0 0 1.5px var(--amber); color: var(--amber);
   }
   .tl-empty { color: var(--ink-soft); font-size: 14px; padding: 10px 0 16px; }
-
+ 
   /* ---- drill-down rows ---- */
   table.data tr.drill { cursor: pointer; }
   table.data tr.drill:hover { background: var(--teal-1); }
   table.data tr.drill td:first-child::after { content: ' \203a'; color: var(--teal-4); font-weight: 700; }
   .crumb { background: none; border: 0; padding: 0; font: inherit; font-size: 13px; color: var(--teal-5); text-decoration: underline; cursor: pointer; }
   .crumb:hover { color: var(--amber); }
-
+ 
   /* ---- data tables ---- */
   .tbl-scroll { overflow-x: auto; background: var(--card); border: 1px solid var(--rule); border-radius: 3px; }
   table.data { width: 100%; border-collapse: collapse; font-size: 13.5px; }
@@ -176,7 +176,7 @@
   tr.is-flagged { background: var(--amber-bg); }
   .tag { display: inline-block; font-size: 11.5px; color: var(--amber); border: 1px solid var(--amber); border-radius: 2px; padding: 0 5px; }
   .name-cell { font-weight: 450; }
-
+ 
   /* ---- states ---- */
   .msg { border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--card); padding: 18px 20px; margin: 26px 0; }
   .msg h3 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
@@ -196,7 +196,7 @@
   .empty { color: var(--ink-soft); font-size: 14px; padding: 18px 0; }
   [hidden] { display: none !important; }
   footer { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 12.5px; color: var(--ink-soft); }
-
+ 
   @media (max-width: 620px) {
     h1 { font-size: 21px; }
     .stat b { font-size: 24px; }
@@ -215,7 +215,7 @@
 </head>
 <body>
 <div class="wrap">
-
+ 
   <header class="masthead">
     <h1>Surveyor attendance</h1>
     <p class="sub">Lucknow Nagar Nigam &middot; NCAP Dispersed Sources Program</p>
@@ -224,7 +224,7 @@
       <button id="reload" type="button">Refresh data</button>
     </div>
   </header>
-
+ 
   <div class="filters" id="filters" hidden>
     <div class="field">
       <span>Period</span>
@@ -253,7 +253,7 @@
       <button id="download" type="button">Download summary</button>
     </div>
   </div>
-
+ 
   <div class="msg error" id="error" hidden>
     <h3 id="errorTitle">Could not load the response sheet</h3>
     <p id="errorBody"></p>
@@ -261,10 +261,10 @@
     <p class="pick-label">Or load a CSV you have downloaded:</p>
     <input type="file" id="filePick" accept=".csv,text/csv">
   </div>
-
+ 
   <div id="app" hidden>
     <div class="stats" id="stats"></div>
-
+ 
     <section id="musterSection">
       <h2>Daily muster</h2>
       <p class="note">One column per day. Darker means a longer logged shift; outlined cells need a time correction.</p>
@@ -279,31 +279,31 @@
         <span class="mark flag"></span><span>Needs checking</span>
       </div>
     </section>
-
+ 
     <section id="timelineSection" hidden>
       <h2 id="timelineHeading">Shifts on the day</h2>
       <p class="note">Each bar runs from the submitted start time to the end time. Hatched bars have times that need correcting.</p>
       <div id="timeline"></div>
     </section>
-
+ 
     <section>
       <h2 id="coverageHeading">Coverage by zone</h2>
       <p class="note" id="coverageNote"></p>
       <div class="tbl-scroll"><table class="data" id="coverage"></table></div>
     </section>
-
+ 
     <section>
       <h2>Performance by surveyor</h2>
       <p class="note">Click a column heading to sort.</p>
       <div class="tbl-scroll"><table class="data" id="summary"></table></div>
     </section>
-
+ 
     <section>
       <h2>Entry log</h2>
       <p class="note" id="logNote"></p>
       <div class="tbl-scroll"><table class="data" id="log"></table></div>
     </section>
-
+ 
     <footer>
       <p id="masterNote" class="master-note"></p>
       Hours come from the submitted start and end times. Where an end time falls before its start time or a shift
@@ -313,26 +313,26 @@
     </footer>
   </div>
 </div>
-
+ 
 <script>
 /* ==========================================================================
    CONFIG
    ========================================================================== */
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQAPqMSMQXsC9evp6bgIDw6CBG2VS0sNVts08WLLF7_mkvP6HnIVHV4OUDyNU9nOYau3JBXhg-8pvl/pub?gid=1736756042&single=true&output=csv";
-
+ 
 // Optional second endpoint, tried only if the one above fails. To use it, take
 // the sheet's own ID from its edit URL (docs.google.com/spreadsheets/d/ID/edit),
 // set sharing to "Anyone with the link can view", and fill in ID and the gid:
 // "https://docs.google.com/spreadsheets/d/ID/gviz/tq?tqx=out:csv&gid=1736756042"
 const ALT_CSV_URL = "";
-
+ 
 // ---- Ward master list -----------------------------------------------------
 // Set this to a published CSV of the "Zone-ward mapping" tab (File > Share >
 // Publish to web > that tab > Comma-separated values). Two columns: zone, ward.
 // With it set, wards that were never surveyed appear as zero rows, which is what
 // turns the zone view from an activity report into a coverage report.
 const WARD_MAP_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQAPqMSMQXsC9evp6bgIDw6CBG2VS0sNVts08WLLF7_mkvP6HnIVHV4OUDyNU9nOYau3JBXhg-8pvl/pub?gid=952302536&single=true&output=csv";
-
+ 
 // Fallback copy of the mapping sheet, used only if the URL above cannot be
 // reached. Kept so the coverage view still works offline or if the sheet is
 // unpublished. Refresh it if the ward list changes.
@@ -452,7 +452,7 @@ Zone-1,Mashakganj-Wazirganj
 Zone-1,Rani laxmibai
 Zone-1,Nazarbagh-Yadunath Sanyal
 Zone-1,Hazratganj-Ramtirath`;
-
+ 
 /* ==========================================================================
    HELPERS
    ========================================================================== */
@@ -462,7 +462,7 @@ const FULLDOW = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','
 const pad = (n) => String(n).padStart(2, '0');
 const el = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
-
+ 
 function parseCSV(text) {
   const rows = [];
   let row = [], val = '', q = false;
@@ -482,7 +482,7 @@ function parseCSV(text) {
   if (val !== '' || row.length) { row.push(val); rows.push(row); }
   return rows.filter((r) => r.some((c) => String(c).trim() !== ''));
 }
-
+ 
 const parseDMY = (s) => {
   const m = String(s || '').trim().match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})/);
   if (!m) return null;
@@ -505,7 +505,7 @@ const parseNum = (s) => {
 const hhmm = (mins) => mins == null ? '—' : Math.floor(mins / 60) + ':' + pad(Math.round(mins % 60));
 const clock = (mins) => mins == null ? '—' : pad(Math.floor(mins / 60)) + ':' + pad(mins % 60);
 const num = (v, dp = 1) => v == null ? '—' : v.toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp });
-
+ 
 const fyStart = (d) => d.getMonth() >= 3 ? d.getFullYear() : d.getFullYear() - 1;
 const fyQ = (d) => Math.floor(((d.getMonth() + 9) % 12) / 3) + 1;
 const dayKey = (d) => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
@@ -515,7 +515,7 @@ const weekStart = (d) => {
   return x;
 };
 const shortDate = (d) => d.getDate() + ' ' + MONTHS[d.getMonth()];
-
+ 
 function periodOf(d, mode) {
   if (mode === 'day') return { key: dayKey(d), label: pad(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear() + ' (' + FULLDOW[(d.getDay() + 6) % 7] + ')' };
   if (mode === 'month') return { key: d.getFullYear() + '-' + pad(d.getMonth() + 1), label: MONTHS[d.getMonth()] + ' ' + d.getFullYear() };
@@ -529,7 +529,7 @@ function periodOf(d, mode) {
   }
   return { key: 'all', label: 'All time' };
 }
-
+ 
 /* ==========================================================================
    WARD MASTER LIST
    ========================================================================== */
@@ -545,21 +545,21 @@ const zoneLabel = (s) => {
   const m = String(s || '').match(/(\d+)/);
   return m ? 'Zone ' + Number(m[1]) : String(s || '').trim();
 };
-
+ 
 let WARD_MASTER = new Map();     // wardKey  -> { zoneKey, zone, ward }
 let ZONE_WARDS = new Map();      // zoneKey  -> [{ ward, wardKey }]
 let MASTER_SOURCE = 'built-in list';
 let MASTER_WARNING = '';
-
+ 
 function loadWardMaster(text, source) {
   const rows = parseCSV(text);
   if (!rows.length) return false;
-
+ 
   // Locate the columns by header name rather than assuming A and B.
   const head = rows[0].map((h) => String(h || '').trim().toLowerCase());
   const zi = head.findIndex((h) => /\bzone\b/.test(h));
   const wi = head.findIndex((h) => /\bward\b/.test(h));
-
+ 
   // The responses tab also has Zone and Ward columns, so header presence alone
   // cannot tell the two sheets apart. Response-only columns are the giveaway.
   if (head.some((h) => /timestamp|start time|end time|ticket|distance/.test(h))) {
@@ -570,7 +570,7 @@ function loadWardMaster(text, source) {
     MASTER_WARNING = 'The ward mapping URL did not return a sheet with Zone and Ward columns, so the built-in list is still in use.';
     return false;
   }
-
+ 
   const master = new Map(), byZone = new Map();
   for (let i = 1; i < rows.length; i++) {
     const z = (rows[i][zi] || '').trim(), w = (rows[i][wi] || '').trim();
@@ -591,16 +591,31 @@ function loadWardMaster(text, source) {
   MASTER_WARNING = '';
   return true;
 }
-
+ 
 /* ==========================================================================
    STATE
    ========================================================================== */
 let ENTRIES = [];
 const state = { mode: 'all', period: '', surveyor: '', zone: '', sort: 'name', dir: 1, covSort: 'tickets', covDir: 1, covDrilled: false };
-
+ 
 /* ==========================================================================
    LOAD
    ========================================================================== */
+// fetch() never times out on its own. Without this, a request that stalls
+// leaves the page on "Loading..." indefinitely with nothing in the error box.
+function fetchWithTimeout(url, ms, label) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), ms);
+  return fetch(url, { cache: 'no-store', redirect: 'follow', signal: ctl.signal })
+    .catch((err) => {
+      if (err && err.name === 'AbortError') {
+        throw new Error('The ' + label + ' request timed out after ' + Math.round(ms / 1000) + ' seconds.');
+      }
+      throw err;
+    })
+    .finally(() => clearTimeout(timer));
+}
+ 
 function normalize(rows) {
   const head = rows[0].map((h) => h.trim().toLowerCase());
   const col = (...names) => {
@@ -618,7 +633,7 @@ function normalize(rows) {
     dist: col('distance covered', 'distance')
   };
   if (ix.date < 0 || ix.name < 0) throw new Error('The sheet needs at least a Date and a Name column.');
-
+ 
   const out = [];
   for (let r = 1; r < rows.length; r++) {
     const row = rows[r];
@@ -657,17 +672,18 @@ function normalize(rows) {
   out.sort((a, b) => a.date - b.date || a.name.localeCompare(b.name));
   return out;
 }
-
+ 
 async function load() {
-  el('synced').textContent = 'Loading\u2026';
   el('error').hidden = true;
   el('errorFix').innerHTML = '';
-
+ 
   // Ward master first, so response rows can be matched against it as they parse.
+  // This is optional data: a stall here must never block the responses.
   loadWardMaster(WARD_MAP_BUILTIN, 'built-in list');
   if (WARD_MAP_URL) {
+    el('synced').textContent = 'Loading ward list\u2026';
     try {
-      const r = await fetch(WARD_MAP_URL, { cache: 'no-store' });
+      const r = await fetchWithTimeout(WARD_MAP_URL, 8000, 'ward mapping');
       if (!r.ok) MASTER_WARNING = 'The ward mapping URL returned HTTP ' + r.status + '; the built-in list is still in use.';
       else {
         const t = await r.text();
@@ -675,29 +691,35 @@ async function load() {
         else loadWardMaster(t, 'published mapping sheet');
       }
     } catch (e) {
-      MASTER_WARNING = 'The ward mapping sheet could not be reached; the built-in list is still in use.';
+      MASTER_WARNING = (e && e.message ? e.message + ' ' : '') + 'The built-in ward list is being used instead.';
     }
   }
-
+ 
+  el('synced').textContent = 'Loading responses\u2026';
+ 
   // Try the plain published URL first, then a cache-busted variant, then the
   // optional alternate endpoint. Some setups reject unknown query parameters.
   const tries = [CSV_URL, CSV_URL + '&t=' + Date.now()];
   if (ALT_CSV_URL) tries.push(ALT_CSV_URL);
-
+ 
   let last = null;
   for (const url of tries) {
     try {
-      const res = await fetch(url, { cache: 'no-store', redirect: 'follow' });
+      const res = await fetchWithTimeout(url, 12000, 'response sheet');
       if (!res.ok) { last = new Error('The sheet returned HTTP ' + res.status + '.'); continue; }
       const text = await res.text();
       if (/^\s*</.test(text)) { last = new Error('The URL returned a web page, not CSV. Re-copy the published CSV link.'); continue; }
       ingest(text);
       return;
-    } catch (err) { last = err; }
+    } catch (err) {
+      last = err;
+      // A timeout means the host is not answering; retrying it just doubles the wait.
+      if (/timed out/.test(err.message || '')) break;
+    }
   }
   showError(last);
 }
-
+ 
 function showError(err) {
   el('synced').textContent = 'Not loaded';
   const msg = (err && err.message) || String(err);
@@ -705,7 +727,7 @@ function showError(err) {
   el('errorBody').textContent = blocked
     ? 'The browser blocked the request before it reached Google (' + msg + '). The sheet itself is almost certainly fine.'
     : msg;
-
+ 
   let fix = '';
   if (blocked && location.protocol === 'file:') {
     const file = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
@@ -735,7 +757,7 @@ function showError(err) {
   el('errorFix').innerHTML = fix;
   el('error').hidden = false;
 }
-
+ 
 function ingest(text, source) {
   ENTRIES = normalize(parseCSV(text));
   if (!ENTRIES.length) throw new Error('No usable rows found in the sheet.');
@@ -757,14 +779,14 @@ function ingest(text, source) {
   refreshPeriods();
   render();
 }
-
+ 
 function fillSelect(id, values, allLabel) {
   const s = el(id), keep = s.value;
   s.innerHTML = '<option value="">' + allLabel + '</option>' +
     values.map((v) => '<option value="' + esc(v) + '">' + esc(v) + '</option>').join('');
   if (values.includes(keep)) s.value = keep;
 }
-
+ 
 function refreshPeriods() {
   const f = el('periodField');
   if (state.mode === 'all') { f.hidden = true; state.period = ''; return; }
@@ -780,7 +802,7 @@ function refreshPeriods() {
   state.period = keys.includes(state.period) ? state.period : keys[0];
   el('period').value = state.period;
 }
-
+ 
 /* ==========================================================================
    RENDER
    ========================================================================== */
@@ -802,14 +824,14 @@ function periodBounds() {
   }
   return null;
 }
-
+ 
 function filtered() {
   return ENTRIES.filter((e) =>
     (state.mode === 'all' || periodOf(e.date, state.mode).key === state.period) &&
     (!state.surveyor || e.name === state.surveyor) &&
     (!state.zone || e.zone === state.zone));
 }
-
+ 
 function render() {
   const rows = filtered();
   const isDay = state.mode === 'day';
@@ -821,12 +843,12 @@ function render() {
   renderSummary(rows);
   renderLog(rows);
 }
-
+ 
 function renderTimeline(rows) {
   const box = el('timeline');
   el('timelineHeading').textContent = 'Shifts on ' + (el('period').selectedOptions[0] || {}).textContent;
   if (!rows.length) { box.innerHTML = '<p class="tl-empty">No entries logged on this date.</p>'; return; }
-
+ 
   // Domain: whole hours spanning every submitted time, at least 6 hours wide.
   let lo = 24 * 60, hi = 0;
   for (const e of rows) {
@@ -841,7 +863,7 @@ function renderTimeline(rows) {
   if (hi - lo < 360) hi = Math.min(1440, lo + 360);
   const span = hi - lo;
   const pct = (m) => ((m - lo) / span) * 100;
-
+ 
   // Hour ruler, thinned out so labels never collide.
   const step = span > 720 ? 180 : span > 480 ? 120 : 60;
   let ruler = '', ticks = '';
@@ -849,7 +871,7 @@ function renderTimeline(rows) {
     ruler += '<span style="left:' + pct(m).toFixed(2) + '%">' + pad(Math.floor(m / 60)) + ':00</span>';
     ticks += '<div class="tl-tick" style="left:' + pct(m).toFixed(2) + '%"></div>';
   }
-
+ 
   const names = [...new Set(rows.map((e) => e.name))].sort((a, b) => a.localeCompare(b));
   let html = '<div class="tl"><div class="tl-hours">' + ruler + '</div>';
   for (const n of names) {
@@ -874,7 +896,7 @@ function renderTimeline(rows) {
   }
   box.innerHTML = html + '</div>';
 }
-
+ 
 const ZONE_COLS = [
   { k: 'label', t: 'Zone' }, { k: 'tickets', t: 'Tickets', num: true, bar: true, dp: 0 },
   { k: 'coverage', t: 'Wards covered', num: true, frac: true },
@@ -889,10 +911,10 @@ const WARD_COLS = [
   { k: 'hours', t: 'Hours', num: true, dp: 1 }, { k: 'dist', t: 'Km', num: true, dp: 0 },
   { k: 'lastSeen', t: 'Last surveyed', date: true }
 ];
-
+ 
 const startOfToday = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
 const daysAgo = (d) => Math.round((startOfToday() - new Date(d.getFullYear(), d.getMonth(), d.getDate())) / 86400000);
-
+ 
 function lastSeenCell(d) {
   if (!d) return '<td class="never">Never surveyed</td>';
   const n = daysAgo(d);
@@ -900,7 +922,7 @@ function lastSeenCell(d) {
   return '<td>' + pad(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear() +
     '<small class="ago">' + when + '</small></td>';
 }
-
+ 
 function groupBy(rows, keyOf, labelOf) {
   const by = new Map();
   for (const e of rows) {
@@ -924,7 +946,7 @@ function groupBy(rows, keyOf, labelOf) {
     lastSeen: g.lastSeen, unmatched: g.unmatched
   }));
 }
-
+ 
 function coverageData(rows, drilled) {
   if (drilled) {
     const zk = zoneKey(state.zone);
@@ -946,7 +968,7 @@ function coverageData(rows, drilled) {
   for (const d of data) d.wardTotal = (ZONE_WARDS.get(d.key) || []).length;
   return { data, haveMaster: ZONE_WARDS.size > 0 };
 }
-
+ 
 function sortCoverage(data, cols) {
   const k = state.covSort, dir = state.covDir;
   data.sort((a, b) => {
@@ -966,19 +988,19 @@ function sortCoverage(data, cols) {
   });
   return data;
 }
-
+ 
 function renderCoverage(rows) {
   const t = el('coverage');
   const drilled = !!state.zone;
   const cols = drilled ? WARD_COLS : ZONE_COLS;
   const { data, total, haveMaster } = coverageData(rows, drilled);
-
+ 
   if (state.covDrilled !== drilled) {          // sensible default per view
     state.covDrilled = drilled;
     state.covSort = drilled ? 'lastSeen' : 'tickets';
     state.covDir = 1;
   }
-
+ 
   el('coverageHeading').textContent = drilled ? 'Wards in ' + state.zone : 'Coverage by zone';
   const seenCount = data.filter((d) => d.visits > 0).length;
   let note = drilled
@@ -988,7 +1010,7 @@ function renderCoverage(rows) {
     : 'Tickets raised in each zone. Click a zone to see its wards.';
   if (drilled) note += ' <button class="crumb" id="clearZone" type="button">Show all zones</button>';
   el('coverageNote').innerHTML = note;
-
+ 
   if (!data.length) {
     t.innerHTML = '<tbody><tr><td class="empty" style="padding:18px">No entries match these filters.</td></tr></tbody>';
   } else {
@@ -1039,7 +1061,7 @@ function renderCoverage(rows) {
     }
     t.innerHTML = html + '</tr></tbody>';
   }
-
+ 
   t.querySelectorAll('tr.drill').forEach((tr) => tr.addEventListener('click', () => {
     state.zone = tr.dataset.zone;
     el('zone').value = state.zone;
@@ -1054,7 +1076,7 @@ function renderCoverage(rows) {
   const clear = el('clearZone');
   if (clear) clear.addEventListener('click', () => { state.zone = ''; el('zone').value = ''; render(); });
 }
-
+ 
 function renderStats(rows) {
   const dates = new Set(rows.map((e) => e.dayKey));                       // calendar days
   const surveyorDays = new Set(rows.map((e) => e.name + '|' + e.dayKey)); // one per surveyor per day
@@ -1066,7 +1088,7 @@ function renderStats(rows) {
   const flags = rows.filter((e) => e.flag).length;
   const sd = surveyorDays.size || 1;
   const timedSd = timedDays.size || 1;
-
+ 
   const cards = state.mode === 'day' ? [
     { v: people.size, l: people.size === 1 ? 'Surveyor out' : 'Surveyors out' },
     { v: rows.length, l: rows.length === 1 ? 'Entry' : 'Entries' },
@@ -1074,7 +1096,8 @@ function renderStats(rows) {
     { v: (mins / 60 / (new Set(rows.filter((e) => e.validMins != null).map((e) => e.name)).size || 1)).toFixed(1), l: 'Avg hours / surveyor' },
     { v: tickets.toLocaleString('en-IN'), l: 'Tickets raised' },
     { v: (tickets / people.size).toFixed(1), l: 'Avg tickets / surveyor' },
-    { v: Math.round(dist).toLocaleString('en-IN'), l: 'Km covered' }
+    { v: Math.round(dist).toLocaleString('en-IN'), l: 'Km covered' },
+    { v: (dist / people.size).toFixed(1), l: 'Avg km / surveyor' }
   ] : [
     { v: people.size, l: people.size === 1 ? 'Surveyor' : 'Surveyors' },
     { v: dates.size, l: dates.size === 1 ? 'Day logged' : 'Days logged',
@@ -1083,20 +1106,21 @@ function renderStats(rows) {
     { v: (mins / 60 / timedSd).toFixed(1), l: 'Avg hours / surveyor-day' },
     { v: tickets.toLocaleString('en-IN'), l: 'Tickets raised' },
     { v: (tickets / sd).toFixed(1), l: 'Avg tickets / surveyor-day' },
-    { v: Math.round(dist).toLocaleString('en-IN'), l: 'Km covered' }
+    { v: Math.round(dist).toLocaleString('en-IN'), l: 'Km covered' },
+    { v: (dist / sd).toFixed(1), l: 'Avg km / surveyor-day' }
   ];
   if (flags) cards.push({ v: flags, l: flags === 1 ? 'Entry to check' : 'Entries to check', cls: 'flagged' });
-
+ 
   el('stats').innerHTML = cards.map((c) =>
     '<div class="stat ' + (c.cls || '') + '"><b>' + esc(c.v) + '</b><span>' + esc(c.l) + '</span>' +
     (c.sub ? '<em>' + esc(c.sub) + '</em>' : '') + '</div>').join('');
 }
-
+ 
 function renderMuster(rows) {
   const t = el('muster');
   if (!rows.length) { t.innerHTML = '<tbody><tr><td class="empty" style="padding:18px">No entries match these filters.</td></tr></tbody>'; return; }
   const names = [...new Set(rows.map((e) => e.name))].sort((a, b) => a.localeCompare(b));
-
+ 
   // Span the whole selected period, not just days with entries — a blank column
   // is the point of a muster. Future dates are trimmed off.
   let min = rows[0].date, max = rows[rows.length - 1].date;
@@ -1110,7 +1134,7 @@ function renderMuster(rows) {
   }
   const days = [];
   for (let d = new Date(min); d <= max; d.setDate(d.getDate() + 1)) days.push(new Date(d));
-
+ 
   const cellBy = new Map();
   for (const e of rows) {
     const k = e.name + '|' + e.dayKey;
@@ -1121,7 +1145,7 @@ function renderMuster(rows) {
     cellBy.set(k, c);
   }
   const band = (c) => !c.timed ? 'h1' : c.mins < 120 ? 'h1' : c.mins < 240 ? 'h2' : c.mins < 360 ? 'h3' : c.mins < 480 ? 'h4' : 'h5';
-
+ 
   let head = '<thead><tr><th class="name">Surveyor</th>';
   let month = -1;
   for (const d of days) {
@@ -1133,7 +1157,7 @@ function renderMuster(rows) {
       '<div>' + d.getDate() + '</div><div>' + DOW[dow] + '</div></th>';
   }
   head += '</tr></thead>';
-
+ 
   let body = '<tbody>';
   for (const n of names) {
     body += '<tr><td class="name">' + esc(n) + '</td>';
@@ -1150,7 +1174,7 @@ function renderMuster(rows) {
   }
   t.innerHTML = head + body + '</tbody>';
 }
-
+ 
 function aggregate(rows) {
   const by = new Map();
   for (const e of rows) {
@@ -1166,10 +1190,11 @@ function aggregate(rows) {
     hours: a.mins / 60, tickets: a.tickets, dist: a.dist, flags: a.flags, wards: a.wards.size,
     avgHours: a.timedDays.size ? a.mins / 60 / a.timedDays.size : null,
     perDay: a.tickets / a.days.size,
+    distPerDay: a.days.size ? a.dist / a.days.size : null,
     perHour: a.mins ? a.timedTickets / (a.mins / 60) : null
   }));
 }
-
+ 
 const COLS = [
   { k: 'name', t: 'Surveyor' },
   { k: 'days', t: 'Days', num: true },
@@ -1179,10 +1204,11 @@ const COLS = [
   { k: 'perDay', t: 'Tickets/day', num: true, dp: 1 },
   { k: 'perHour', t: 'Tickets/hr', num: true, dp: 1 },
   { k: 'dist', t: 'Km', num: true, bar: true, dp: 0 },
+  { k: 'distPerDay', t: 'Km/day', num: true, dp: 1 },
   { k: 'wards', t: 'Wards', num: true },
   { k: 'flags', t: 'To check', num: true }
 ];
-
+ 
 function renderSummary(rows) {
   const t = el('summary');
   const data = aggregate(rows);
@@ -1220,7 +1246,7 @@ function renderSummary(rows) {
     renderSummary(filtered());
   }));
 }
-
+ 
 function renderLog(rows) {
   const t = el('log');
   el('logNote').textContent = rows.length + (rows.length === 1 ? ' entry' : ' entries') + ', most recent first.';
@@ -1237,7 +1263,7 @@ function renderLog(rows) {
       '<td class="num">' + e.tickets + '</td><td class="num">' + num(e.dist, 0) + '</td>' +
       '<td>' + (e.flag ? '<span class="tag">' + esc(e.flag) + '</span>' : '') + '</td></tr>').join('') + '</tbody>';
 }
-
+ 
 /* ==========================================================================
    EXPORT
    ========================================================================== */
@@ -1251,10 +1277,11 @@ function download() {
     ['Zone', state.zone || 'All'],
     ['Generated', new Date().toLocaleString('en-IN')],
     [],
-    ['Surveyor', 'Days logged', 'Entries', 'Hours', 'Avg hours/day', 'Tickets', 'Tickets/day', 'Tickets/hour', 'Km', 'Wards', 'To check']
+    ['Surveyor', 'Days logged', 'Entries', 'Hours', 'Avg hours/day', 'Tickets', 'Tickets/day', 'Tickets/hour', 'Km', 'Km/day', 'Wards', 'To check']
   ];
   for (const d of data) lines.push([d.name, d.days, d.entries, d.hours.toFixed(2), d.avgHours == null ? '' : d.avgHours.toFixed(2),
-    d.tickets, d.perDay.toFixed(2), d.perHour == null ? '' : d.perHour.toFixed(2), Math.round(d.dist), d.wards, d.flags]);
+    d.tickets, d.perDay.toFixed(2), d.perHour == null ? '' : d.perHour.toFixed(2), Math.round(d.dist),
+    d.distPerDay == null ? '' : d.distPerDay.toFixed(2), d.wards, d.flags]);
   const csv = lines.map((r) => r.map((c) => {
     const s = String(c ?? '');
     return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
@@ -1265,7 +1292,7 @@ function download() {
   a.click();
   URL.revokeObjectURL(a.href);
 }
-
+ 
 /* ==========================================================================
    EVENTS
    ========================================================================== */
@@ -1292,7 +1319,7 @@ el('filePick').addEventListener('change', (e) => {
   };
   r.readAsText(f);
 });
-
+ 
 load();
 </script>
 </body>
